@@ -1,0 +1,241 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<HTML
+><HEAD
+><TITLE
+>&#13;      Measuring and Improving Application Performance with PerfSuite
+    </TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="NEXT"
+TITLE="Hardware Performance Counter Basics"
+HREF="x27.html"></HEAD
+><BODY
+CLASS="article"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="ARTICLE"
+><DIV
+CLASS="TITLEPAGE"
+><H1
+CLASS="title"
+><A
+NAME="AEN2"
+>Measuring and Improving Application Performance with PerfSuite</A
+></H1
+><DIV
+CLASS="authorgroup"
+><A
+NAME="AEN4"
+></A
+><H4
+CLASS="author"
+><A
+NAME="AEN5"
+>Rick Kufrin</A
+></H4
+></DIV
+><P
+CLASS="copyright"
+>Copyright &copy; 2005 Rick Kufrin</P
+><HR
+WIDTH="75%"
+ALIGN="CENTER"
+COLOR="#000000"
+SIZE="1"></DIV
+><DIV
+CLASS="TOC"
+><DL
+><DT
+><B
+>Table of Contents</B
+></DT
+><DT
+><A
+HREF="t1.html#AEN16"
+>Introduction</A
+></DT
+><DT
+><A
+HREF="x27.html"
+>Hardware Performance Counter Basics</A
+></DT
+><DT
+><A
+HREF="x35.html"
+>Using Performance Counters to Measure Application Characteristics</A
+></DT
+><DT
+><A
+HREF="x50.html"
+>PerfSuite Basics</A
+></DT
+><DT
+><A
+HREF="x93.html"
+>Customizing Your Performance Analysis</A
+></DT
+><DT
+><A
+HREF="x118.html"
+>Summary</A
+></DT
+><DT
+><A
+HREF="x122.html"
+>Acknowledgements</A
+></DT
+><DT
+><A
+HREF="a126.html"
+>Online Resources</A
+></DT
+></DL
+></DIV
+><DIV
+CLASS="highlights"
+><A
+NAME="AEN12"
+></A
+><P
+>&#13;    Originally published in <A
+HREF="http://www.linuxjournal.com/issue/135/"
+TARGET="_top"
+>&#13;    <I
+CLASS="citetitle"
+>Linux Journal</I
+> (issue #135, July 2005)</A
+>.
+    </P
+></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="AEN16"
+>Introduction</A
+></H1
+><P
+>&#13;At some point, all developers of software applications, whether targeted to 
+Linux or not, are likely to spend at least a small amount of time focusing on 
+the performance of their applications. The reason is simple: many potential 
+benefits can be gained from tuning software for improved performance. For 
+example, in the scientific and engineering arenas, performance gains can make 
+the difference between running smaller scale simulations rather than larger and 
+potentially more accurate models that would improve the scientific quality of 
+the results. Applications that are more user-oriented also stand to benefit
+from improvements that result in faster responsiveness to the user and an 
+improved overall user experience.
+</P
+><P
+>&#13;Although microprocessor improvements over the past decade or so have made 
+clock speeds well in excess of the gigahertz range commonplace, most developers 
+are aware that a tenfold increase in processor frequency does not guarantee a 
+tenfold reduction in the run time of your application. Additionally, for those 
+developing software for distribution to others, attention to performance and 
+responsiveness can pay big dividends when you consider that your end user may
+be running your application on a mid-1990s era 100MHz Pentium processor.
+</P
+><P
+>&#13;This article is an introduction to a set of open-source software tools called 
+PerfSuite that can help you to understand and possibly improve the performance 
+of your application under Linux. PerfSuite consists of several related tools
+and libraries targeted at several different activities useful in 
+performance-oriented analysis.
+</P
+><P
+>&#13;The development of PerfSuite was motivated by my own experiences in working 
+with not only applications that I had developed, but a number of large 
+supercomputer-class applications in both academic and corporate settings. After 
+having worked with several research groups, I realized that developers often 
+take advantage of a only limited set of tools that may be available to them. 
+They typically rely on traditional time-based statistical profiling techniques 
+such as <B
+CLASS="command"
+>gprof</B
+>.
+</P
+><P
+>&#13;Of course, <B
+CLASS="command"
+>gprof</B
+>-style profiles are invaluable and should
+be the mainstay of any developer's performance toolbox. However, the 
+microprocessors of today, such as those on which you probably are using Linux, 
+offer advanced features that can provide alternative insights into 
+characteristics that directly affect the performance of your software. In 
+particular, nearly all microprocessors in common use today incorporate 
+hardware-based performance measurement support in their designs. This support 
+can provide an alternative viewpoint of your software's performance. While 
+time-based profiles tell you <I
+CLASS="emphasis"
+>where your software spends
+its time</I
+>, hardware performance measurements can help you understand 
+<I
+CLASS="emphasis"
+>what the processor is doing</I
+> and how effectively the 
+processor is being utilized.  Hardware measurements also pinpoint particular 
+reasons why the CPU is stalling rather than accomplishing useful work.
+</P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="x27.html"
+ACCESSKEY="N"
+>Next &#62;&#62;&#62;</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Hardware Performance Counter Basics</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>
